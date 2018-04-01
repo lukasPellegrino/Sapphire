@@ -59,6 +59,7 @@ class App extends Component<Props> {
     let startAtLogin = false;
     let minimizeToTray = false;
     let minimizeOnClose = false;
+    let enableBetaUI = false;
     let theme = "theme-defaultEcc";
     const ds = settings.get('settings.display');
 
@@ -76,6 +77,7 @@ class App extends Component<Props> {
     this.props.setMinimizeOnClose(minimizeOnClose);
     this.props.setMinimizeToTray(minimizeToTray);
     this.props.setStartAtLogin(startAtLogin);
+    this.props.setBetaUI(enableBetaUI);
     this.props.setTray(tray);
     this.props.setTheme(theme);
 

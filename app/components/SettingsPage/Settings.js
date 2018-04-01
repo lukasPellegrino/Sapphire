@@ -33,6 +33,7 @@ class Settings extends Component {
     this.handleImportPrivateKey = this.handleImportPrivateKey.bind(this);
     this.handleChangePasswordClicked = this.handleChangePasswordClicked.bind(this);
     this.handleSidebarClicked = this.handleSidebarClicked.bind(this);
+    this.handleBetaUIEnable = this.handleBetaUIEnable.bind(this);
   }
 
   handleUpdateApplication(){
@@ -156,7 +157,13 @@ class Settings extends Component {
     this.props.setSettingsOptionSelected(option);
   }
 
+  handleBetaUIEnable() {
+    this.reloadSettings('display.beta_ui', !this.props.betaUI);
+    this.props.setBetaUI(!this.props.betaUI);
+  }
+
   getGeneralSettings(){
+    console.log(this.props);
     return(
       <div className="container">
         <SettingsToggle
@@ -182,6 +189,12 @@ class Settings extends Component {
           text= { this.props.lang.minimizeOnClose }
           handleChange = {this.handleMinimizeOnClose}
           checked = {this.props.minimizeOnClose}
+        />
+        <SettingsToggle
+          keyVal={8}
+          text= { this.props.lang.betaUI }
+          handleChange = {this.handleBetaUIEnable}
+          checked = {this.props.betaUI}
         />
         <div className="row settingsToggle">
           <div className="col-sm-6 text-left removePadding">
@@ -339,6 +352,7 @@ const mapStateToProps = state => {
     hideTrayIcon: state.application.hideTrayIcon,
     minimizeToTray: state.application.minimizeToTray,
     minimizeOnClose: state.application.minimizeOnClose,
+    betaUI: state.application.betaUI,
     startAtLogin: state.application.startAtLogin,
     wallet: state.application.wallet,
     updateAvailable: state.startup.guiUpdate || state.startup.daemonUpdate,

@@ -155,6 +155,7 @@
     "hideTrayIcon": "Hide tray icon",
     "minimizeToTray": "Minimize to tray instead of the task bar",
     "minimizeOnClose": "Minimize on close",
+    "betaUI": "Enable beta UI features",
     "applicationVersion": "Application version",
     "installUpdate": "Install Update",
     "noUpdateAvailable": "No update available",

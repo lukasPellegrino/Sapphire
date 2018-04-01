@@ -22,6 +22,7 @@ import {
 	START_AT_LOGIN,
 	MINIMIZE_TO_TRAY,
 	MINIMIZE_ON_CLOSE,
+	ENABLE_BETA_UI,
 	EXPORT_PRIVATE_KEYS,
 	PANEL_EXPORT_PRIVATE_KEYS,
 	LOCATION_TO_EXPORT,
@@ -258,6 +259,9 @@ export default(state = INITIAL_STATE, action) => {
 	}
 	else if(action.type == MINIMIZE_ON_CLOSE){
 		return{...state, minimizeOnClose: action.payload}
+	}
+	else if(action.type == ENABLE_BETA_UI){
+		return{...state, betaUI: action.payload}
 	}
 	else if(action.type == USER_ADDRESSES){
 		return{...state, userAddresses: action.payload}

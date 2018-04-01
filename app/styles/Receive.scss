@@ -132,3 +132,22 @@
 	margin-top:30px;
 	margin-bottom: 70px;
 }
+
+.addressCard {
+	@include themify($themes) { 
+    background-color: themed('homePanelsBackgroundColor');  
+    -webkit-box-shadow: themed('mainElementBoxShadow'); 
+	}
+	padding: 15px;
+}
+
+.addressBalance {
+	@include themify($themes) {
+		color: themed('bodyParagraphColor');
+	}
+	font-size: 36px;
+}
+
+.upgradeBtn {
+	text-align: right;
+}

@@ -50,6 +50,7 @@ export const TRAY = "tray";
 export const START_AT_LOGIN = "start_at_login"; 
 export const MINIMIZE_TO_TRAY = "minimize_to_tray"; 
 export const MINIMIZE_ON_CLOSE = "minimize_on_close"; 
+export const ENABLE_BETA_UI = "enable_beta_ui"; 
 export const EXPORT_PRIVATE_KEYS = "export_private_keys";
 export const PANEL_EXPORT_PRIVATE_KEYS = "panel_export_private_keys";
 export const LOCATION_TO_EXPORT = "location_to_export";
