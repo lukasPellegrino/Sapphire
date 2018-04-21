@@ -196,11 +196,12 @@ class App extends Component<Props> {
       TweenMax.to(['#gettingReady'], 0.5, {autoAlpha: 1});
 
     let t = new TimelineMax({repeat:-1, yoyo:true});
-    t.set(['#first', '#second', '#third', '#forth'], {x:20, y:20});
-    t.fromTo('#first', 2, {autoAlpha: 0, scale: 0.90}, { scale: 1, autoAlpha: 1, transformOrigin: '50% 50%', ease: Power4.easeNone, delay: 0.3}, 0);
-    t.fromTo('#second', 2, {autoAlpha: 0, scale: 0.90}, { scale: 1, autoAlpha: 1, transformOrigin: '50% 50%', ease: Power4.easeNone, delay: 0.3}, 0);
-    t.fromTo('#third', 2, {autoAlpha: 0, scale: 0.90}, { scale: 1, autoAlpha: 1, transformOrigin: '50% 50%',ease: Power4.easeNone, delay: 0.3}, 0);
-    t.fromTo('#forth', 2, {autoAlpha: 0, scale: 0.90}, { scale: 1, autoAlpha: 1, transformOrigin: '50% 50%', ease: Power4.easeNone, delay: 0.3}, 0);
+    t.set(['#first', '#second', '#third', '#forth', '#fifth'], {x:20, y:25});
+    t.fromTo('#first', 2, {autoAlpha: 0, scale: 0.8}, { scale: 0.9, autoAlpha: 1, transformOrigin: '50% 50%', ease: Power4.easeNone, delay: 0.3}, 0);
+    t.fromTo('#second', 2, {autoAlpha: 0, scale: 0.8}, { scale: 0.9, autoAlpha: 1, transformOrigin: '50% 50%', ease: Power4.easeNone, delay: 0.3}, 0);
+    t.fromTo('#third', 2, {autoAlpha: 0, scale: 0.8}, { scale: 0.9, autoAlpha: 1, transformOrigin: '50% 50%',ease: Power4.easeNone, delay: 0.3}, 0);
+    t.fromTo('#forth', 2, {autoAlpha: 0, scale: 0.8}, { scale: 0.9, autoAlpha: 1, transformOrigin: '50% 50%', ease: Power4.easeNone, delay: 0.3}, 0);
+    t.fromTo('#fifth', 2, {autoAlpha: 0, scale: 0.8}, { scale: 0.9, autoAlpha: 1, transformOrigin: '50% 50%', ease: Power4.easeNone, delay: 0.3}, 0);
     t.fromTo('#logo1', 2, {autoAlpha: 1}, {autoAlpha: 0, delay: 0.3}, 0);
     t.timeScale(2);
     callback();
@@ -314,7 +315,7 @@ const mapStateToProps = state => {
     initialSetup: state.startup.initialSetup,
     partialInitialSetup: state.startup.partialInitialSetup,
     setupDone: state.startup.setupDone,
-    loader: state.startup.loader || (state.chains.loadingBlockIndexPayment && !state.startup.initialSetup),
+    loader: true,
     //had to add this for production, otherwise clicking on sidebar would not cause the tab to change (no idea why)
     pathname: state.router.location.pathname,
     settings: state.application.settings,

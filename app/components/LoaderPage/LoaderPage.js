@@ -95,102 +95,138 @@ class Loader extends React.Component {
   render() {
     return (
       <div>
-			<svg version="1.1" id="logoLoader" x="0px" y="0px" viewBox="0 0 1200 1200" style={{enableBackground:"new 0 0 1200 1200"}}>
+			<svg version="1.1" id="logoLoader" x="0px" y="0px" viewBox="0 0 1672.439 893.7" style={{enableBackground:"new 0 0 1672.439 893.7"}}>
  				<filter id="black">
-			        <feOffset result="offOut" in="SourceAlpha" dx="0" dy="-20"/>
+			        <feOffset result="offOut" in="SourceAlpha" dx="10" dy="0"/>
 			        <feColorMatrix in="offOut" result ="matrixOut" type="matrix"
 			                                     values="0 0 0 0 0
 			                                             0 0 0 0 0
 			                                             0 0 0 0 0
 			                                             0 0 0 1 0" />
-			        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10"/>
+			        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="15"/>
 			        <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
 		  		</filter>
  				<filter id="yellow">
-			        <feOffset result="offOut" in="SourceAlpha" dx="0" dy="-20"/>
+			        <feOffset result="offOut" in="SourceAlpha" dx="10" dy="0"/>
 			        <feColorMatrix in="offOut" result ="matrixOut" type="matrix"
 			                                     values="0 0 0 0 1
 	                                                0 0 0 0 0.4
 	                                                0 0 0 0 -0.5
 	                                                0 0 0 1 0" />
-			        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="15"/>
+			        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="25"/>
 			        <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
 		  		</filter>
-				<g ref="logo1" id="logo1" filter="url(#black)" transform="scale(1,-1) translate(0,-1200)">
-						<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31765.793 -88605.3125)">
-						<stop  offset="0" style={{stopColor:"#1A304A"}}/>
-						<stop  offset="1" style={{stopColor:"#1A304A"}}/>
+				<g ref="logo1" id="logo1" filter="url(#black)" x="0px" y="50px" >
+					<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-290.6265" y1="702.6533" x2="-290.6265" y2="474.5693" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
 					</linearGradient>
-					<path className="st0" d="M699.3,47.9L365.2,293.3l-9.4,134c0,21.3,13,30,40.7,30l343.3-231.5V81.7C739.9,58.7,730.8,47.9,699.3,47.9z"
-						/>
-						<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31765.793 -88367.4531)">
-						<stop  offset="0" style={{stopColor:"#1A304A"}}/>
-						<stop  offset="1" style={{stopColor:"#101D2D"}}/>
+					<path fill="url(#SVGID_1_)" d="M965.377,658.342l-145.944-98.114l-88.712,59.686c-7.461,5.009-16.25,4.396-22.791,0.205
+						c0.613,0.511,1.125,0.92,1.737,1.431l231.794,167.815c13.798,9.914,33.012,0.103,33.012-16.863v-96.785
+						C974.575,668.766,971.1,662.225,965.377,658.342z"/>
+					<g>
+						<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-300.6274" y1="536.5273" x2="-300.6274" y2="314.3662" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_2_)" d="M941.563,461.807L851.217,396.5L707.01,500.95c-5.416,3.884-8.585,10.118-8.585,16.863v84.93
+							c0,16.659,18.601,26.471,32.398,17.272l232.714-156.573C956.894,466.815,948.514,466.917,941.563,461.807z"/>
+						
+						<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-160.124" y1="362.9458" x2="-160.124" y2="362.59" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_3_)" d="M974.575,445.762c0,0.102,0,0.204,0,0.408C974.575,446.068,974.575,445.966,974.575,445.762z"/>
+					</g>
+						<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-292.0259" y1="382.1465" x2="-292.0259" y2="154.1626" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#F29D27"}}/>
+							<stop  offset="1" style={{stopColor: "#A16A29"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_4_)" d="M965.377,330.887l-145.944-98.114l-88.609,59.584c-8.585,5.825-19.01,4.088-25.755-1.941
+							c0.817,0.817,1.635,1.532,2.555,2.146l233.838,169.246c13.798,9.914,33.012,0.103,33.012-16.863v-96.785
+							C974.575,341.209,971.1,334.771,965.377,330.887z"/>
+						<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-295.2271" y1="215.9648" x2="-295.2271" y2="-73.9209" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#F29D27"}}/>
+							<stop  offset="1" style={{stopColor: "#A16A29"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_5_)" d="M707.01,173.394L941.563,3.636c13.798-9.913,33.012-0.102,33.012,16.863v96.785
+							c0,6.95-3.476,13.389-9.198,17.272l-234.554,157.8c-13.798,9.301-32.398-0.613-32.398-17.272v-84.827
+							C698.425,183.613,701.594,177.277,707.01,173.394z"/>
+					</g>
+				<g id="logo2" filter="url(#yellow)" x="0px" y="50px">
+					<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-290.6265" y1="702.6533" x2="-290.6265" y2="474.5693" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
 					</linearGradient>
-					<path className="st1" d="M699.3,695.2L355.8,445.1V315.8c0-21.3,13-30,40.7-30l343.3,231.5v144.1C739.9,684.4,730.8,695.2,699.3,695.2z
-						"/>
-						<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5239" x2="-81.2865" y2="217.5139" gradientTransform="matrix(384.0482 0 0 412.3166 31772.2949 -88771.1016)">
-						<stop  offset="0" style={{stopColor:"#F29D26"}}/>
-						<stop  offset="1" style={{stopColor:"#986317"}}/>
+					<path id="fifth" fill="url(#SVGID_1_)" d="M965.377,658.342l-145.944-98.114l-88.712,59.686c-7.461,5.009-16.25,4.396-22.791,0.205
+						c0.613,0.511,1.125,0.92,1.737,1.431l231.794,167.815c13.798,9.914,33.012,0.103,33.012-16.863v-96.785
+						C974.575,668.766,971.1,662.225,965.377,658.342z"/>
+					<g>
+						<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-300.6274" y1="536.5273" x2="-300.6274" y2="314.3662" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
+						</linearGradient>
+						<path id="forth" fill="url(#SVGID_2_)" d="M941.563,461.807L851.217,396.5L707.01,500.95c-5.416,3.884-8.585,10.118-8.585,16.863v84.93
+							c0,16.659,18.601,26.471,32.398,17.272l232.714-156.573C956.894,466.815,948.514,466.917,941.563,461.807z"/>
+						
+						<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-160.124" y1="362.9458" x2="-160.124" y2="362.59" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
+						</linearGradient>
+						<path id="third" fill="url(#SVGID_3_)" d="M974.575,445.762c0,0.102,0,0.204,0,0.408C974.575,446.068,974.575,445.966,974.575,445.762z"/>
+					</g>
+						<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-292.0259" y1="382.1465" x2="-292.0259" y2="154.1626" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#F29D27"}}/>
+							<stop  offset="1" style={{stopColor: "#A16A29"}}/>
+						</linearGradient>
+						<path id="second" fill="url(#SVGID_4_)" d="M965.377,330.887l-145.944-98.114l-88.609,59.584c-8.585,5.825-19.01,4.088-25.755-1.941
+							c0.817,0.817,1.635,1.532,2.555,2.146l233.838,169.246c13.798,9.914,33.012,0.103,33.012-16.863v-96.785
+							C974.575,341.209,971.1,334.771,965.377,330.887z"/>
+						<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-295.2271" y1="215.9648" x2="-295.2271" y2="-73.9209" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#F29D27"}}/>
+							<stop  offset="1" style={{stopColor: "#A16A29"}}/>
+						</linearGradient>
+						<path id="first" fill="url(#SVGID_5_)" d="M707.01,173.394L941.563,3.636c13.798-9.913,33.012-0.102,33.012,16.863v96.785
+							c0,6.95-3.476,13.389-9.198,17.272l-234.554,157.8c-13.798,9.301-32.398-0.613-32.398-17.272v-84.827
+							C698.425,183.613,701.594,177.277,707.01,173.394z"/>
+					</g>
+				<g id="logo3" x="0px" y="50px">
+											<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-290.6265" y1="702.6533" x2="-290.6265" y2="474.5693" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
 					</linearGradient>
-					<path className="st2" d="M705.8,505.3L371.7,752.4l-9.4,135c0,21.4,13,30.2,40.7,30.2l343.3-233.2V539.3
-						C746.4,516.1,737.3,505.3,705.8,505.3z"/>
-						<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31770.4023 -87907.5469)">
-						<stop  offset="0" style={{stopColor:"#F29D26"}}/>
-						<stop  offset="1" style={{stopColor:"#A06719"}}/>
-					</linearGradient>
-					<path className="st3" d="M703.9,1155.1L360.5,905V775.7c0-21.3,13-30,40.7-30l343.3,231.5v144.1
-						C744.5,1144.3,735.4,1155.1,703.9,1155.1z"/>
-				</g>
-				<g id="logo2" filter="url(#yellow)" transform="scale(1,-1) translate(0,-1200)">
-						<linearGradient id="forth_1_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31765.793 -88605.3125)">
-						<stop  offset="0" style={{stopColor:"#1A304A"}}/>
-						<stop  offset="1" style={{stopColor:"#1A304A"}}/>
-					</linearGradient>
-					<path id="forth" className="st4" d="M699.3,47.9L365.2,293.3l-9.4,134c0,21.3,13,30,40.7,30l343.3-231.5V81.7
-						C739.9,58.7,730.8,47.9,699.3,47.9z"/>
-						<linearGradient id="third_1_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31765.793 -88367.4531)">
-						<stop  offset="0" style={{stopColor:"#1A304A"}}/>
-						<stop  offset="1" style={{stopColor:"#101D2D"}}/>
-					</linearGradient>
-					<path id="third" className="st5" d="M699.3,695.2L355.8,445.1V315.8c0-21.3,13-30,40.7-30l343.3,231.5v144.1
-						C739.9,684.4,730.8,695.2,699.3,695.2z"/>
-						<linearGradient id="second_1_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5239" x2="-81.2865" y2="217.5139" gradientTransform="matrix(384.0482 0 0 412.3166 31772.2949 -88771.1016)">
-						<stop  offset="0" style={{stopColor:"#F29D26"}}/>
-						<stop  offset="1" style={{stopColor:"#986317"}}/>
-					</linearGradient>
-					<path id="second" className="st6" d="M705.8,505.3L371.7,752.4l-9.4,135c0,21.4,13,30.2,40.7,30.2l343.3-233.2V539.3
-						C746.4,516.1,737.3,505.3,705.8,505.3z"/>
-						<linearGradient id="first_1_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31770.4023 -87907.5469)">
-						<stop  offset="0" style={{stopColor:"#F29D26"}}/>
-						<stop  offset="1" style={{stopColor:"#A06719"}}/>
-					</linearGradient>
-					<path id="first" className="st7" d="M703.9,1155.1L360.5,905V775.7c0-21.3,13-30,40.7-30l343.3,231.5v144.1
-						C744.5,1144.3,735.4,1155.1,703.9,1155.1z"/>
-				</g>
-				<g id="logo3" transform="scale(1,-1) translate(0,-1200)">
-						<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31765.793 -88605.3125)">
-						<stop  offset="0" style={{stopColor:"#1A304A"}}/>
-						<stop  offset="1" style={{stopColor:"#1A304A"}}/>
-					</linearGradient>
-					<path className="st8" d="M699.3,47.9L365.2,293.3l-9.4,134c0,21.3,13,30,40.7,30l343.3-231.5V81.7C739.9,58.7,730.8,47.9,699.3,47.9z"/>
-						<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31765.793 -88367.4531)">
-						<stop  offset="0" style={{stopColor:"#1A304A"}}/>
-						<stop  offset="1" style={{stopColor:"#101D2D"}}/>
-					</linearGradient>
-					<path className="st9" d="M699.3,695.2L355.8,445.1V315.8c0-21.3,13-30,40.7-30l343.3,231.5v144.1C739.9,684.4,730.8,695.2,699.3,695.2z"/>
-						<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5239" x2="-81.2865" y2="217.5139" gradientTransform="matrix(384.0482 0 0 412.3166 31772.2949 -88771.1016)">
-						<stop  offset="0" style={{stopColor:"#F29D26"}}/>
-						<stop  offset="1" style={{stopColor:"#986317"}}/>
-					</linearGradient>
-					<path className="st10" d="M705.8,505.3L371.7,752.4l-9.4,135c0,21.4,13,30.2,40.7,30.2l343.3-233.2V539.3 C746.4,516.1,737.3,505.3,705.8,505.3z"/>
-						<linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="-81.2865" y1="216.5276" x2="-81.2865" y2="217.5276" gradientTransform="matrix(384.0482 0 0 409.4315 31770.4023 -87907.5469)">
-						<stop  offset="0" style={{stopColor:"#F29D26"}}/>
-						<stop  offset="1" style={{stopColor:"#A06719"}}/>
-					</linearGradient>
-					<path className="st11" d="M703.9,1155.1L360.5,905V775.7c0-21.3,13-30,40.7-30l343.3,231.5v144.1
-						C744.5,1144.3,735.4,1155.1,703.9,1155.1z"/>
-				</g>
+					<path fill="url(#SVGID_1_)" d="M965.377,658.342l-145.944-98.114l-88.712,59.686c-7.461,5.009-16.25,4.396-22.791,0.205
+						c0.613,0.511,1.125,0.92,1.737,1.431l231.794,167.815c13.798,9.914,33.012,0.103,33.012-16.863v-96.785
+						C974.575,668.766,971.1,662.225,965.377,658.342z"/>
+					<g>
+						<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-300.6274" y1="536.5273" x2="-300.6274" y2="314.3662" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_2_)" d="M941.563,461.807L851.217,396.5L707.01,500.95c-5.416,3.884-8.585,10.118-8.585,16.863v84.93
+							c0,16.659,18.601,26.471,32.398,17.272l232.714-156.573C956.894,466.815,948.514,466.917,941.563,461.807z"/>
+						
+						<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-160.124" y1="362.9458" x2="-160.124" y2="362.59" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#1D304A"}}/>
+							<stop  offset="1" style={{stopColor: "#111D2D"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_3_)" d="M974.575,445.762c0,0.102,0,0.204,0,0.408C974.575,446.068,974.575,445.966,974.575,445.762z"/>
+					</g>
+						<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-292.0259" y1="382.1465" x2="-292.0259" y2="154.1626" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#F29D27"}}/>
+							<stop  offset="1" style={{stopColor: "#A16A29"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_4_)" d="M965.377,330.887l-145.944-98.114l-88.609,59.584c-8.585,5.825-19.01,4.088-25.755-1.941
+							c0.817,0.817,1.635,1.532,2.555,2.146l233.838,169.246c13.798,9.914,33.012,0.103,33.012-16.863v-96.785
+							C974.575,341.209,971.1,334.771,965.377,330.887z"/>
+						<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-295.2271" y1="215.9648" x2="-295.2271" y2="-73.9209" gradientTransform="matrix(1.022 0 0 1.022 1138.2222 75.2188)">
+							<stop  offset="0" style={{stopColor: "#F29D27"}}/>
+							<stop  offset="1" style={{stopColor: "#A16A29"}}/>
+						</linearGradient>
+						<path fill="url(#SVGID_5_)" d="M707.01,173.394L941.563,3.636c13.798-9.913,33.012-0.102,33.012,16.863v96.785
+							c0,6.95-3.476,13.389-9.198,17.272l-234.554,157.8c-13.798,9.301-32.398-0.613-32.398-17.272v-84.827
+							C698.425,183.613,701.594,177.277,707.01,173.394z"/>
+					</g>
 			</svg>
 			<div id="loaderText" style={{marginTop: "15px"}}>
 				<div id="blockIndexLoad" ref="blockIndexLoad">
