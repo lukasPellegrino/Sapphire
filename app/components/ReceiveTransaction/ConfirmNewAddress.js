@@ -10,7 +10,7 @@ const event = require('../../utils/eventhandler');
 const Tools = require('../../utils/tools');
 
 // This is temporary until ANS is enabled
-const ansEnabled = false;
+const ansEnabled = true;
 
 class ConfirmNewAddress extends React.Component {
  constructor() {

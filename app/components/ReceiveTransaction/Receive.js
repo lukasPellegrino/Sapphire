@@ -12,7 +12,7 @@ const ansAddresImage = require('../../../resources/images/ans_address.png');
 var classNames = require('classnames');
 
 // This is temporary until ANS is enabled
-const ansEnabled = false;
+const ansEnabled = true;
 
 class Receive extends Component {
 
@@ -183,30 +183,30 @@ class Receive extends Component {
     let rowClassName = "row normalWeight tableRowCustom";
     let nameHeader = classNames({
       'col-sm-3 headerAddresses tableRowHeader columnPaddingFixAns': this.props.filterAns,
-      'col-sm-1 headerAddresses tableRowHeader': !this.props.filterAns,
+      'col-sm-3 headerAddresses tableRowHeader': !this.props.filterAns,
     });
     let addressHeader = classNames({
       'col-sm-6 headerAddresses tableRowHeader columnPaddingFixAns': this.props.filterAns,
-      'col-sm-7 headerAddresses tableRowHeader': !this.props.filterAns,
+      'col-sm-6 headerAddresses tableRowHeader': !this.props.filterAns,
     });
     let amountHeader = classNames({
       'col-sm-3 headerAddresses tableRowHeader columnPaddingFixAns': this.props.filterAns,
-      'col-sm-4 headerAddresses tableRowHeader': !this.props.filterAns,
+      'col-sm-3 headerAddresses tableRowHeader': !this.props.filterAns,
     });
 
     let nameColumn = classNames({
       'col-sm-3 tableColumn tableColumnFixReceive selectableText columnPaddingFixAns': this.props.filterAns,
-      'col-sm-1 tableColumn tableColumnFixReceive selectableText': !this.props.filterAns,
+      'col-sm-3 tableColumn tableColumnFixReceive selectableText': !this.props.filterAns,
     });
 
     let addressColumn = classNames({
       'col-sm-6 tableColumn selectableText columnPaddingFixAns': this.props.filterAns,
-      'col-sm-7 tableColumn selectableText': !this.props.filterAns,
+      'col-sm-6 tableColumn selectableText': !this.props.filterAns,
     });
 
     let amountColumn = classNames({
       'col-sm-3 tableColumn selectableText columnPaddingFixAns': this.props.filterAns,
-      'col-sm-4 tableColumn selectableText': !this.props.filterAns,
+      'col-sm-3 tableColumn selectableText': !this.props.filterAns,
     });
 
 
