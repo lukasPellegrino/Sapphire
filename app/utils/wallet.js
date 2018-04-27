@@ -12,8 +12,8 @@ export default class Wallet {
     client = new Client({
       host: '127.0.0.1',
       //network: 'testnet',
-      //port: 30001,
-      port: 19119,
+      port: 30001,
+      //port: 19119,
       username: username,
       password: password
     });
@@ -245,8 +245,9 @@ export default class Wallet {
   walletstart() {
     return new Promise((resolve, reject) => {
       let path = getPlatformWalletUri();
+      const flags = '-testnet0 -printtoconsole -rpcport=30001 -dnsseed=0 -debug -rpcallowip=0.0.0.0/0';
       if (process.platform === 'linux') {
-        runExec(`chmod +x "${path}" && "${path}"`, 1000).then(() => {
+        runExec(`chmod +x "${path}" && "${path}" ${flags}`, 1000).then(() => {
           return resolve(true);
         })
         .catch(() => {
@@ -254,7 +255,7 @@ export default class Wallet {
         });
       } else if (process.platform === 'darwin') {
         console.log(path);
-        runExec(`chmod +x "${path}" && "${path}"`, 1000).then(() => {
+        runExec(`chmod +x "${path}" && "${path}" ${flags}`, 1000).then(() => {
           return resolve(true);
         })
         .catch((err) => {
@@ -262,7 +263,7 @@ export default class Wallet {
           reject(false);
         });
       } else if (process.platform.indexOf('win') > -1) {
-        path = `& "${path}"`;
+        path = `& "${path}" ${flags}`;
         const ps = new shell({ //eslint-disable-line
           executionPolicy: 'Bypass',
           noProfile: true
