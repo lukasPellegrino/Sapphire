@@ -15168,236 +15168,6 @@ li.active.have-children span::after {
   .theme-darkEcc .home__ans-payment-time {
     color: #464b5a; }
 
-.inputPlaceholderReceive {
-  z-index: 0;
-  text-align: left !important;
-  top: 5px; }
-
-#ansExplanation {
-  display: inline-block;
-  font-size: 14px;
-  position: relative;
-  top: 15px; }
-  .theme-defaultEcc #ansExplanation {
-    color: #555d77; }
-  .theme-darkEcc #ansExplanation {
-    color: #464b5a; }
-
-.typeSelectorReceive {
-  display: inline-block;
-  cursor: pointer; }
-
-#headerReceive {
-  text-align: center;
-  position: relative;
-  top: 25px;
-  font-size: 14px; }
-
-#headerReceive span {
-  padding: 0px 20px; }
-  .theme-defaultEcc #headerReceive span {
-    color: #555d77; }
-  .theme-darkEcc #headerReceive span {
-    color: #464b5a; }
-
-#inputAddress {
-  width: 750px;
-  margin: 0 auto;
-  position: relative;
-  margin-top: 60px; }
-
-#tableFiltersReceive {
-  position: absolute;
-  width: 100%;
-  top: 36px;
-  right: 4%;
-  text-align: right; }
-
-.tableFilterReceive {
-  padding-top: 1px;
-  font-size: 14px;
-  display: inline-block;
-  cursor: pointer; }
-
-.fixMarginReceive {
-  margin-left: 30px; }
-
-.headerAddresses {
-  position: relative;
-  font-size: 14px;
-  padding-top: 16px; }
-
-.headerAddressFix {
-  padding-left: 5%; }
-
-.tableColumnFixReceive {
-  padding-left: 5%; }
-
-#imageAns {
-  position: relative;
-  top: 55px; }
-
-.ansLabel {
-  font-size: 14px;
-  display: inline-block;
-  margin-left: 10px;
-  position: relative;
-  top: 2px;
-  font-weight: 700; }
-  .theme-defaultEcc .ansLabel {
-    color: #555d77; }
-  .theme-darkEcc .ansLabel {
-    color: #464b5a; }
-
-#addressCreatedSuccessfully {
-  font-size: 15px;
-  display: inline-block;
-  position: absolute;
-  top: 2px;
-  width: 100%;
-  text-align: center;
-  visibility: hidden; }
-  .theme-defaultEcc #addressCreatedSuccessfully {
-    color: #d09128; }
-  .theme-darkEcc #addressCreatedSuccessfully {
-    color: #c39c59; }
-
-#addressCreatedSuccessfully span {
-  cursor: pointer;
-  text-decoration: underline; }
-
-#upgradeAns {
-  font-size: 13px;
-  display: inline-block;
-  cursor: pointer; }
-  .theme-defaultEcc #upgradeAns {
-    color: #aeacf3; }
-  .theme-darkEcc #upgradeAns {
-    color: #59aac3; }
-
-.confirmationText {
-  font-size: 16px;
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  font-weight: 500;
-  margin-top: 30px; }
-
-.Receive__ans-code {
-  font-size: 12px;
-  font-weight: bold;
-  color: #2e2e3a; }
-
-.Receive__upgrade-text {
-  display: inline-block;
-  position: absolute;
-  right: 0px;
-  font-size: 14px;
-  cursor: pointer;
-  padding-top: 3px; }
-  .theme-defaultEcc .Receive__upgrade-text {
-    color: #aeacf3; }
-  .theme-darkEcc .Receive__upgrade-text {
-    color: #59aac3; }
-
-#rows {
-  overflow-y: scroll;
-  overflow-x: hidden; }
-
-.sendPlaceholder {
-  position: relative;
-  top: 64px;
-  width: 80%;
-  text-align: left !important;
-  font-size: 15px;
-  font-weight: 600; }
-
-.sendPlaceholderAmount {
-  top: 116px; }
-
-.sendButton {
-  display: inline-block;
-  text-align: center;
-  position: relative !important;
-  top: 27px;
-  left: 20px; }
-
-#message {
-  position: relative;
-  text-align: center;
-  font-size: 15px;
-  visibility: hidden;
-  top: 65px; }
-  .theme-defaultEcc #message {
-    color: #d09128; }
-  .theme-darkEcc #message {
-    color: #c39c59; }
-
-#clearButton {
-  position: relative;
-  top: 67px;
-  left: 50%;
-  margin-left: -38%;
-  cursor: pointer;
-  z-index: 2; }
-
-.tableColumContactFix {
-  padding-left: 10%; }
-
-.deleteContactIcon {
-  cursor: pointer;
-  width: 20px; }
-
-.inputSend {
-  width: 400px;
-  top: 20px;
-  margin-bottom: 30px; }
-
-#pleaseTypePassword {
-  font-size: 16px;
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 25px; }
-  .theme-defaultEcc #pleaseTypePassword {
-    color: #b4b7c8; }
-  .theme-darkEcc #pleaseTypePassword {
-    color: #cecece; }
-
-.labelSend {
-  font-size: 16px;
-  width: 400px;
-  text-align: left;
-  margin: 0 auto;
-  padding-top: 10px; }
-  .theme-defaultEcc .labelSend {
-    color: #b4b7c8; }
-  .theme-darkEcc .labelSend {
-    color: #cecece; }
-
-.labelAddressSend {
-  font-size: 14px;
-  width: 400px;
-  text-align: left;
-  margin: 0 auto;
-  padding-top: 10px;
-  font-weight: 600; }
-  .theme-defaultEcc .labelAddressSend {
-    color: #555d77; }
-  .theme-darkEcc .labelAddressSend {
-    color: #464b5a; }
-
-.labelAmountSend {
-  font-size: 16px;
-  width: 400px;
-  text-align: left;
-  margin: 0 auto;
-  padding-top: 25px; }
-  .theme-defaultEcc .labelAmountSend {
-    color: #b4b7c8; }
-  .theme-darkEcc .labelAmountSend {
-    color: #cecece; }
-
 .transactionInfoTitle {
   font-weight: 600; }
   .theme-defaultEcc .transactionInfoTitle {
@@ -17086,6 +16856,14 @@ i.fa.fa-chevron-down {
 .theme-darkEcc .chatPreviewActive {
   background-color: #191b21 !important; }
 
+#messagingInputDiv p {
+  position: absolute;
+  font-size: 15px; }
+  .theme-defaultEcc #messagingInputDiv p {
+    color: #555d77; }
+  .theme-darkEcc #messagingInputDiv p {
+    color: #464b5a; }
+
 .borderChatPreview {
   width: 7px;
   height: 7px;
@@ -17554,13 +17332,6 @@ i.fa.fa-chevron-down {
   font-weight: 300; }
 
 html,
-body {
-  /*background-image: -webkit-radial-gradient(top, circle cover, #24232f 0%, #181e35 80%);
-  background-image: -moz-radial-gradient(top, circle cover, #24232f 0%, #181e35 80%);
-  background-image: -o-radial-gradient(top, circle cover, #24232f 0%, #181e35 80%);
-  background-image: radial-gradient(top, circle cover, #24232f 0%, #181e35 80%);
-  height: 100%;*/ }
-
 *:focus {
   outline: none !important;
   border-color: inherit;
@@ -17675,31 +17446,45 @@ aside {
 
 .inputDiv {
   position: relative;
-  margin: 0 auto; }
-
-.inputPlaceholder {
-  position: absolute;
-  text-align: center;
-  font-size: 15px; }
-  .theme-defaultEcc .inputPlaceholder {
-    color: #555d77; }
-  .theme-darkEcc .inputPlaceholder {
-    color: #464b5a; }
-
-.inputCustom {
-  font-size: 15px;
-  font-weight: 600;
-  background-color: transparent;
-  border: none;
-  text-align: center;
-  position: relative;
-  transition: border-bottom .3s; }
-  .theme-defaultEcc .inputCustom {
-    color: #555d77;
-    border-bottom: 2px solid #1c2340; }
-  .theme-darkEcc .inputCustom {
-    color: #cecece;
-    border-bottom: 2px solid #22252d; }
+  margin: 0 auto;
+  width: 100%; }
+  .inputDiv p {
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    top: 5px;
+    text-align: center;
+    transition: all 0.2s;
+    position: absolute; }
+    .theme-defaultEcc .inputDiv p {
+      color: #555d77; }
+    .theme-darkEcc .inputDiv p {
+      color: #464b5a; }
+  .inputDiv input {
+    font-size: 15px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    position: relative;
+    transition: border-bottom .3s;
+    width: 100%; }
+    .theme-defaultEcc .inputDiv input {
+      color: #555d77;
+      border-bottom: 2px solid #1c2340; }
+    .theme-darkEcc .inputDiv input {
+      color: #cecece;
+      border-bottom: 2px solid #22252d; }
+  .inputDiv--is-left {
+    margin: 0px 0px; }
+    .inputDiv--is-left p {
+      text-align: left; }
+    .inputDiv--is-left input {
+      text-align: left; }
+  .inputDiv--is-active p {
+    font-size: 13px;
+    top: -14px;
+    transition: all 0.1s; }
 
 .theme-defaultEcc .inputCustomHighlight {
   border-bottom: 2px solid #d09128 !important; }
@@ -17735,19 +17520,24 @@ aside {
     color: #d9daef; }
 
 .buttonPrimary {
-  position: absolute;
-  height: 36px;
-  width: 125px;
+  padding: 0px 30px;
   border-radius: 14px;
   font-size: 12px;
   line-height: 34px;
   font-weight: bold;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  width: max-content;
+  margin: 0 auto; }
   .theme-defaultEcc .buttonPrimary {
     border: 2px solid #d09128; }
   .theme-darkEcc .buttonPrimary {
     border: 2px solid #c39c59; }
+  .buttonPrimary--is-popup-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    bottom: 10px; }
 
 .theme-defaultEcc .buttonPrimary:hover {
   background-color: #d09128;
@@ -17771,17 +17561,15 @@ aside {
   .theme-darkEcc #unlockPanel {
     background-color: #15161b; }
 
-.unlockWallet {
-  height: 265px; }
-
-.wrongPassword {
+#wrongPassword {
   width: 100%;
   visibility: hidden;
   margin-bottom: 14px;
+  margin-top: 9px;
   font-size: 16px; }
-  .theme-defaultEcc .wrongPassword {
+  .theme-defaultEcc #wrongPassword {
     color: #d09128; }
-  .theme-darkEcc .wrongPassword {
+  .theme-darkEcc #wrongPassword {
     color: #c39c59; }
 
 .closeButtonPopup {
@@ -17827,5 +17615,280 @@ aside {
     background-color: rgba(0, 0, 0, 0.7); }
   .theme-darkEcc .mancha {
     background-color: rgba(0, 0, 0, 0.7); }
+
+.Send__form {
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 70px;
+  max-width: 650px; }
+
+.Send__form-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+
+.Send__form-clear-btn {
+  display: block;
+  cursor: pointer;
+  z-index: 2;
+  margin-top: 12px; }
+
+.Send__inputs-wrapper {
+  width: 70%; }
+
+.Send__form-confirm-btn {
+  padding: 0px 45px; }
+
+.Send__message-status {
+  position: relative;
+  text-align: center;
+  font-size: 15px;
+  visibility: hidden;
+  top: 65px; }
+  .theme-defaultEcc .Send__message-status {
+    color: #d09128; }
+  .theme-darkEcc .Send__message-status {
+    color: #c39c59; }
+
+#rows {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.tableColumContactFix {
+  padding-left: 10%; }
+
+.deleteContactIcon {
+  cursor: pointer;
+  width: 20px; }
+
+.inputSend {
+  width: 400px;
+  top: 20px;
+  margin-bottom: 30px; }
+
+#pleaseTypePassword {
+  font-size: 16px;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 25px; }
+  .theme-defaultEcc #pleaseTypePassword {
+    color: #b4b7c8; }
+  .theme-darkEcc #pleaseTypePassword {
+    color: #cecece; }
+
+.labelSend {
+  font-size: 16px;
+  width: 400px;
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 10px; }
+  .theme-defaultEcc .labelSend {
+    color: #b4b7c8; }
+  .theme-darkEcc .labelSend {
+    color: #cecece; }
+
+.labelAddressSend {
+  font-size: 14px;
+  width: 400px;
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-weight: 600; }
+  .theme-defaultEcc .labelAddressSend {
+    color: #555d77; }
+  .theme-darkEcc .labelAddressSend {
+    color: #464b5a; }
+
+.labelAmountSend {
+  font-size: 16px;
+  width: 400px;
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 25px; }
+  .theme-defaultEcc .labelAmountSend {
+    color: #b4b7c8; }
+  .theme-darkEcc .labelAmountSend {
+    color: #cecece; }
+
+.ansAddressesList {
+  border-radius: 14px;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+  overflow: auto; }
+  .theme-defaultEcc .ansAddressesList {
+    background-color: #1c2340; }
+  .theme-darkEcc .ansAddressesList {
+    background-color: #191b21; }
+
+.ansAddressesList-item {
+  margin: 10px 0px;
+  font-size: 15px;
+  cursor: pointer; }
+
+.multipleAddresses {
+  width: 450px;
+  font-size: 15px;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px; }
+
+.UnlockWallet {
+  height: 265px; }
+  .UnlockWallet__form {
+    width: 70%;
+    margin: 0 auto; }
+  .UnlockWallet__form-confirm-btn {
+    padding: 0px 40px; }
+
+.Receive__header {
+  text-align: center;
+  position: relative;
+  top: 25px;
+  font-size: 14px; }
+  .Receive__header span {
+    padding: 0px 20px; }
+    .theme-defaultEcc .Receive__header span {
+      color: #555d77; }
+    .theme-darkEcc .Receive__header span {
+      color: #464b5a; }
+
+.Receive__form {
+  width: 750px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 60px; }
+
+.Receive__form-wrapper {
+  display: flex;
+  justify-content: space-between; }
+
+.Receive__ans-explanation {
+  display: inline-block;
+  font-size: 14px;
+  position: relative; }
+  .theme-defaultEcc .Receive__ans-explanation {
+    color: #555d77; }
+  .theme-darkEcc .Receive__ans-explanation {
+    color: #464b5a; }
+
+.Receive__form-confirm-btn {
+  margin: 0px 0px; }
+
+.inputPlaceholderReceive {
+  z-index: 0;
+  text-align: left !important;
+  top: 5px; }
+
+.typeSelectorReceive {
+  display: inline-block;
+  cursor: pointer; }
+
+#tableFiltersReceive {
+  position: absolute;
+  width: 100%;
+  top: 36px;
+  right: 4%;
+  text-align: right; }
+
+.tableFilterReceive {
+  padding-top: 1px;
+  font-size: 14px;
+  display: inline-block;
+  cursor: pointer; }
+
+.fixMarginReceive {
+  margin-left: 30px; }
+
+.headerAddresses {
+  position: relative;
+  font-size: 14px;
+  padding-top: 16px; }
+
+.headerAddressFix {
+  padding-left: 5%; }
+
+.tableColumnFixReceive {
+  padding-left: 5%; }
+
+#imageAns {
+  position: relative;
+  top: 55px; }
+
+.ansLabel {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+  font-weight: 700; }
+  .theme-defaultEcc .ansLabel {
+    color: #555d77; }
+  .theme-darkEcc .ansLabel {
+    color: #464b5a; }
+
+#addressCreatedSuccessfully {
+  font-size: 15px;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  width: 100%;
+  text-align: center;
+  visibility: hidden; }
+  .theme-defaultEcc #addressCreatedSuccessfully {
+    color: #d09128; }
+  .theme-darkEcc #addressCreatedSuccessfully {
+    color: #c39c59; }
+
+#addressCreatedSuccessfully span {
+  cursor: pointer;
+  text-decoration: underline; }
+
+#upgradeAns {
+  font-size: 13px;
+  display: inline-block;
+  cursor: pointer; }
+  .theme-defaultEcc #upgradeAns {
+    color: #aeacf3; }
+  .theme-darkEcc #upgradeAns {
+    color: #59aac3; }
+
+.confirmationText {
+  font-size: 16px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 30px; }
+
+.Receive__ans-code {
+  font-size: 12px;
+  font-weight: bold;
+  color: #2e2e3a; }
+
+.Receive__upgrade-text {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  padding-top: 3px; }
+  .theme-defaultEcc .Receive__upgrade-text {
+    color: #aeacf3; }
+  .theme-darkEcc .Receive__upgrade-text {
+    color: #59aac3; }
+
+.CreateAddressPopup {
+  height: auto !important;
+  text-align: center;
+  width: 535px; }
+  .CreateAddressPopup__form-confirm-btn {
+    padding: 0px 40px; }
 
 /*# sourceMappingURL=style.css.map*/

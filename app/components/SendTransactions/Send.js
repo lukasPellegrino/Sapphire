@@ -17,6 +17,11 @@ class Send extends Component {
     super(props);
     this.handleClear = this.handleClear.bind(this);
     this.confirmSend = this.confirmSend.bind(this);
+    this.small = false;
+  }
+
+  componentDidMount(){
+    $('.tableCustom').on('click', this.bringBack.bind(this))
   }
 
   handleClear() {
@@ -27,6 +32,7 @@ class Send extends Component {
   }
 
   async confirmSend() {
+
     if(this.props.amount === "" || isNaN(this.props.amount) === 1){
       Tools.highlightInput('#inputAmountSend', 1000)
     }
@@ -64,13 +70,27 @@ class Send extends Component {
         }
       }
     }
+
+    /*TweenMax.to('#testRemove', 0.3, {height: "92px", y: -51})
+    TweenMax.set('#testRemove', {css: {cursor: "pointer"}})
+    this.small=true;*/
+  }
+
+  bringBack(e){
+    console.log("here")
+    if(this.small){
+      TweenMax.to('#testRemove', 0.3, {height: "100%", y: 0})
+      TweenMax.set('#testRemove', {css: {cursor: "default"}})
+      this.small = false;
+    }
   }
 
   render() {
     let clearButton = require('../../../resources/images/clearButton-orange.png');
     return (
       <div className="panel Send">
-        <AddressBook sendPanel={true}/>
+        <div id="testRemove" style={{height: "100%", position: "relative", overflow:"hidden"}}>
+          <AddressBook sendPanel={true}/>
           <p className="Send__message-status">{ this.props.lang.addressCopiedBelow }</p>
           <div className="Send__form">
             <div className="Send__inputs-wrapper">
@@ -107,6 +127,7 @@ class Send extends Component {
               />
             </div>
           </div>
+        </div>
       </div>
     );
   }
