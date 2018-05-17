@@ -304,8 +304,6 @@ export default(state = INITIAL_STATE, action) => {
 		return {...state, amountSend: action.payload}
 	}
 	else if(action.type == SENDING_ECC){
-		if(!action.payload)
-			return {...state, sendingEcc: action.payload, password: ""};
 		return {...state, sendingEcc: action.payload}
 	}
 	else if(action.type == TRANSACTIONS_PAGE){

@@ -41,7 +41,136 @@
 		text-align: center;
 		font-size: 15px;
 		visibility: hidden;
-		top: 65px;
+		top: 47px;
+	}
+
+	&__contacts{
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+
+		&--is-compact{
+			height: 92px;
+			cursor: pointer;
+			top: -51px;
+
+			& .tableContainer, .Send__message-status, .Send__form, .Send__form-buttons{
+				visibility: hidden;
+			}
+		}
+	}
+
+	&__confirmation{
+		display: flex;
+		max-width: 800px;
+    	margin: 0 auto;
+    	margin-top: 30px;
+	    flex-direction: row;
+	    justify-content: space-between;
+	    position: relative;
+
+	    &--is-compact{
+	    	visibility: hidden;
+	    	display: none;
+
+	    	&-panel{
+	    		visibility: hidden;
+	    	}
+
+	    	&-recent{
+	    		visibility: hidden;
+	    	}
+	    }
+
+	    & .closeButtonPopup{
+    	    top: -45px;
+	        width: 38px;
+    		height: 38px;
+
+    		& span{
+    			position: relative;
+			    left: 11px;
+			    top: -4px;
+			    font-size: 24px;
+				font-weight: 400;
+    		}
+	    }
+	}
+
+	&__confirmation-panel{
+		width: 380px;
+		background-color: #191b21;
+		border-radius: 14px;
+		position: relative;
+		box-shadow: 0 4px 11px -6px black;
+
+		&-header{
+			font-size: 20px;
+			font-weight: 300;
+			text-align: center;
+			padding: 10px 0px;
+			border-bottom: 2px solid #1c1f25;
+		}
+
+
+		&-item{
+			display: flex;
+		    flex-direction: row;
+		    justify-content: space-between;
+		}
+
+		&-label{
+			margin: 7px 20px;
+			font-size: 15px;
+		}
+
+		&-label-right{
+			font-size: 14px;
+			font-weight: 700;
+			margin: 7px 20px;
+		}
+
+		&-address{
+			font-size: 13px;
+		    color: #3e424f;
+		    font-weight: 700;
+		    margin-top: -7px;
+		}
+
+		&-confirm{
+			height: 166px;
+			background-image: linear-gradient(#1e2027, #191b21);
+			margin-top: 20px;
+			padding-top: 15px;
+		}
+
+		&-btn{
+			margin-top: 20px;
+    		background-color: #16181d;
+    		padding: 0px 40px;
+		}
+
+		& #wrongPassword{
+			margin-bottom: 0px;
+			margin-top: 9px;
+			text-align: center;
+		}
+	}
+
+	&__confirmation-recent{
+
+		margin-top: 40px;
+
+		&-header{
+			font-size: 18px;
+		}
+
+		&--no{
+			color: #414150;
+			padding-left: 10px;
+			margin-top: 20px;
+			font-size: 18px;
+		}
 	}
 }
 

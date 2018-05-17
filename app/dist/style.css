@@ -17647,11 +17647,100 @@ aside {
   text-align: center;
   font-size: 15px;
   visibility: hidden;
-  top: 65px; }
+  top: 47px; }
   .theme-defaultEcc .Send__message-status {
     color: #d09128; }
   .theme-darkEcc .Send__message-status {
     color: #c39c59; }
+
+.Send__contacts {
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
+  .Send__contacts--is-compact {
+    height: 92px;
+    cursor: pointer;
+    top: -51px; }
+    .Send__contacts--is-compact .tableContainer, .Send__contacts--is-compact .Send__message-status, .Send__contacts--is-compact .Send__form, .Send__contacts--is-compact .Send__form-buttons {
+      visibility: hidden; }
+
+.Send__confirmation {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative; }
+  .Send__confirmation--is-compact {
+    visibility: hidden;
+    display: none; }
+    .Send__confirmation--is-compact-panel {
+      visibility: hidden; }
+    .Send__confirmation--is-compact-recent {
+      visibility: hidden; }
+  .Send__confirmation .closeButtonPopup {
+    top: -45px;
+    width: 38px;
+    height: 38px; }
+    .Send__confirmation .closeButtonPopup span {
+      position: relative;
+      left: 11px;
+      top: -4px;
+      font-size: 24px;
+      font-weight: 400; }
+
+.Send__confirmation-panel {
+  width: 380px;
+  background-color: #191b21;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 4px 11px -6px black; }
+  .Send__confirmation-panel-header {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    padding: 10px 0px;
+    border-bottom: 2px solid #1c1f25; }
+  .Send__confirmation-panel-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .Send__confirmation-panel-label {
+    margin: 7px 20px;
+    font-size: 15px; }
+  .Send__confirmation-panel-label-right {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 7px 20px; }
+  .Send__confirmation-panel-address {
+    font-size: 13px;
+    color: #3e424f;
+    font-weight: 700;
+    margin-top: -7px; }
+  .Send__confirmation-panel-confirm {
+    height: 166px;
+    background-image: linear-gradient(#1e2027, #191b21);
+    margin-top: 20px;
+    padding-top: 15px; }
+  .Send__confirmation-panel-btn {
+    margin-top: 20px;
+    background-color: #16181d;
+    padding: 0px 40px; }
+  .Send__confirmation-panel #wrongPassword {
+    margin-bottom: 0px;
+    margin-top: 9px;
+    text-align: center; }
+
+.Send__confirmation-recent {
+  margin-top: 40px; }
+  .Send__confirmation-recent-header {
+    font-size: 18px; }
+  .Send__confirmation-recent--no {
+    color: #414150;
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 18px; }
 
 #rows {
   overflow-y: scroll;

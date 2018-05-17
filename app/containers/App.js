@@ -131,9 +131,6 @@ class App extends Component<Props> {
     else if(this.props.updateApplication){
       component = <UpdateApplication />
     }
-    else if(this.props.sending){
-      component = <SendConfirmation />
-    }
     else if(this.props.creatingAddress){
       component = <ConfirmNewAddress />
     }
@@ -322,7 +319,6 @@ const mapStateToProps = state => {
     updateApplication: state.application.updateApplication,
     updatingApplication: state.startup.updatingApp,
     unlocking: state.application.unlocking,
-    sending: state.application.sendingEcc,
     creatingAddress: state.application.creatingAddress,
     unencryptedWallet: state.startup.unencryptedWallet,
     loading: state.startup.loading,

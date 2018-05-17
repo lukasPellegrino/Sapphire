@@ -6,8 +6,7 @@ import * as actions from '../../actions';
 import CloseButtonPopup from '../Others/CloseButtonPopup';
 import ConfirmButtonPopup from '../Others/ConfirmButtonPopup';
 import Input from '../Others/Input';
-
-import $ from 'jquery';
+var classNames = require('classnames');
 
 const Tools = require('../../utils/tools');
 
@@ -29,14 +28,11 @@ class SendConfirmation extends React.Component {
   }
 
   componentWillMount(){
-    Tools.hideFunctionIcons();
   }
 
   componentWillUnmount()
   {
-    Tools.showFunctionIcons();
-    this.props.setMultipleAnsAddresses([]);
-    this.props.setUsernameSend("");
+
   }
 
   sendECC(){
@@ -84,7 +80,6 @@ class SendConfirmation extends React.Component {
   reset(){
     this.props.setPopupLoading(false)
     this.props.setPassword("");
-    this.props.setSendingECC(false);
     this.props.setUsernameSend("");
     this.props.setAmountSend("");
     this.props.setAddressSend("");
@@ -182,33 +177,60 @@ class SendConfirmation extends React.Component {
   }
 
   render() {
+    var sendConfirmation = classNames({
+      'Send__confirmation': true,
+      'Send__confirmation--is-compact': !this.props.isSendingEcc
+    });
+
      return (
-      <div ref="second" style={{height: this.props.multipleAddresses.length > 0 ? "auto" : this.props.username !== "" && this.props.username !== undefined ? "324px" : "293px", top: "22%"}}>
-        <CloseButtonPopup handleClose={this.handleCancel}/>
-        <p className="popupTitle">{ this.props.lang.confirmTransaction }</p>
-        {this.getNameOrAddressHtml()}
-        <div id="send_inputs" style={{display: this.props.multipleAddresses.length > 0 ? "none" : "block"}}>
-          <Input
-            placeholder= { this.props.lang.password }
-            inputId="sendPasswordId"
-            placeholderId= "password"
-            value={this.props.passwordVal}
-            handleChange={this.props.setPassword}
-            style={{marginTop: "40px", width: "70%"}}
-            type="password"
-            autoFocus
-            onSubmit={this.handleConfirm}
-          />
-          <div>
-            <p id="wrongPassword" className="wrongPassword" style={{marginBottom: this.props.multipleAddresses.length > 0 ? "60px" : "14px"}}>Wrong password</p>
+      <div className={sendConfirmation}>
+        <CloseButtonPopup handleClose={this.props.handleClose}/>
+        <div className="Send__confirmation-panel">
+          <p className="Send__confirmation-panel-header">Confirm Transaction</p>
+          <div className="Send__confirmation-panel-item" style={{marginTop: "10px"}}>
+            <p className="Send__confirmation-panel-label">Amount</p>
+            <p className="Send__confirmation-panel-label-right">{Tools.formatNumber(Number(this.props.amount))} <span className="ecc">ECC</span></p>
           </div>
-          <ConfirmButtonPopup
-            inputId={"#sendPasswordId"}
-            handleConfirm={this.handleConfirm}
-            text="Confirm"
-            textLoading={this.props.lang.confirming}
-            text={ this.props.lang.confirm }
-          />
+          <div className="Send__confirmation-panel-item">
+            <p className="Send__confirmation-panel-label">Name</p>
+            <p className="Send__confirmation-panel-label-right">{this.props.username !== "" ? this.props.username : "-----"}</p>
+          </div>
+          <p className="Send__confirmation-panel-label">Address</p>
+          <p className="Send__confirmation-panel-label Send__confirmation-panel-address">{this.props.address}</p>
+          <div className="Send__confirmation-panel-item">
+            <p className="Send__confirmation-panel-label">Estimated fee</p>
+            <p className="Send__confirmation-panel-label-right">0.01 <span className="ecc">ECC</span></p>
+          </div>
+          <div className="Send__confirmation-panel-confirm">
+            <div className="Send__confirmation-panel-item">
+              <p className="Send__confirmation-panel-label">Total</p>
+              <p className="Send__confirmation-panel-label-right">{Tools.formatNumber(Number(this.props.amount) + 0.01)} <span className="ecc">ECC</span></p>
+            </div>
+            <Input
+              placeholder= { this.props.lang.password }
+              placeholderId="password"
+              value={this.props.passwordVal}
+              handleChange={this.props.setPassword}
+              type="password"
+              inputId="sendPasswordId"
+              onSubmit={this.handleConfirm}
+              style={{width: "70%", marginTop: "15px"}}
+              autoFocus
+            />
+            <p id="wrongPassword" className="wrongPassword">Wrong password</p>
+            <ConfirmButtonPopup
+              className="Send__confirmation-panel-btn"
+              text="Send"
+              handleConfirm={this.handleConfirm}
+              textLoading={this.props.lang.confirming}
+              text={ this.props.lang.confirm }
+              hasLoader={false}
+            />
+          </div>
+        </div>
+        <div className="Send__confirmation-recent">
+          <p className="Send__confirmation-recent-header">Recent transactions to this address</p>
+          <p className="Send__confirmation-recent--no">No recent transactions</p>
         </div>
       </div>
       );
@@ -227,7 +249,8 @@ const mapStateToProps = state => {
     wallet: state.application.wallet,
     balance: state.chains.balance,
     codeToSend: state.application.codeToSend,
-    multipleAddresses: state.application.ansAddressesFound
+    multipleAddresses: state.application.ansAddressesFound,
+    isSendingEcc: state.application.sendingEcc
   };
 };
 

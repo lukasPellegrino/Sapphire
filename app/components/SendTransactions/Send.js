@@ -7,6 +7,9 @@ import * as actions from '../../actions';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import Input from '../Others/Input';
 import ConfirmButtonPopup from '../Others/ConfirmButtonPopup'
+import CloseButtonPopup from '../Others/CloseButtonPopup'
+import SendConfirmation from './SendConfirmation'
+var classNames = require('classnames');
 
 import $ from 'jquery';
 
@@ -17,11 +20,12 @@ class Send extends Component {
     super(props);
     this.handleClear = this.handleClear.bind(this);
     this.confirmSend = this.confirmSend.bind(this);
-    this.small = false;
+    this.resetUI = this.resetUI.bind(this);
+    this.isSending = this.props.isSendingEcc;
   }
 
   componentDidMount(){
-    $('.tableCustom').on('click', this.bringBack.bind(this))
+    $('.tableCustom').on('click', this.resetUI.bind(this))
   }
 
   handleClear() {
@@ -66,31 +70,53 @@ class Send extends Component {
           Tools.showTemporaryMessage('.Send__message-status', this.props.lang.invalidFailedAddress);
           Tools.highlightInput('#inputAddressSend', 2100)
         } else {
-          this.props.setSendingECC(true);
+            TweenMax.to('.Send__contacts', 0.3, {css:{top: "-51px", height: "92px"}})
+            TweenMax.to(['.tableContainer, .Send__form'], 0.1, {autoAlpha: 0})
+            TweenMax.set('.Send__contacts', {css: {cursor: "pointer"}})
+            TweenMax.set('.Send__confirmation', {css: {display: "flex"}})
+            TweenMax.to('.Send__confirmation', 0.3, {autoAlpha: 1, delay: 0.2});
+            TweenMax.set('.Send__confirmation-panel', {css: {boxShadow: "none"}})
+            TweenMax.fromTo('.Send__confirmation-panel', 0.3, {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0, delay: 0.2});
+            TweenMax.set('.Send__confirmation-panel', {css: {boxShadow: "0 4px 11px -6px black"}, delay: 0.3})
+            TweenMax.fromTo('.Send__confirmation-recent', 0.3, {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0, delay: 0.35});
+
+            setTimeout(() => {
+              this.props.setSendingECC(true);
+              $('#sendPasswordId').focus();
+            }, 700);
+
+            this.isSending = true;
         }
       }
     }
-
-    /*TweenMax.to('#testRemove', 0.3, {height: "92px", y: -51})
-    TweenMax.set('#testRemove', {css: {cursor: "pointer"}})
-    this.small=true;*/
   }
 
-  bringBack(e){
-    console.log("here")
-    if(this.small){
-      TweenMax.to('#testRemove', 0.3, {height: "100%", y: 0})
-      TweenMax.set('#testRemove', {css: {cursor: "default"}})
-      this.small = false;
+  resetUI(e){
+    if(this.isSending){
+      TweenMax.to('.Send__contacts', 0.3, {css:{top: "0px", height: "100%"}})
+      TweenMax.set('.Send__contacts', {css: {cursor: "default"}})
+      TweenMax.set('.tableContainer', {autoAlpha: 1})
+      TweenMax.set('.Send__form', {autoAlpha: 1})
+      TweenMax.set('.Send__form-buttons', {autoAlpha: 1})
+      TweenMax.to('.Send__confirmation', 0.3, {autoAlpha: 0})
+      this.isSending = false;
+      setTimeout(() => this.props.setSendingECC(false), 300);
+      this.props.setPassword("");
     }
   }
 
   render() {
     let clearButton = require('../../../resources/images/clearButton-orange.png');
+    var sendContacts = classNames({
+      'Send__contacts': true,
+      'Send__contacts--is-compact': this.props.isSendingEcc
+    });
+
+
     return (
-      <div className="panel Send">
-        <div id="testRemove" style={{height: "100%", position: "relative", overflow:"hidden"}}>
-          <AddressBook sendPanel={true}/>
+      <div className="panel Send" style={{overflow: "hidden"}}>
+        <div className={sendContacts}>
+          <AddressBook sendPanel={true}/>;
           <p className="Send__message-status">{ this.props.lang.addressCopiedBelow }</p>
           <div className="Send__form">
             <div className="Send__inputs-wrapper">
@@ -128,6 +154,7 @@ class Send extends Component {
             </div>
           </div>
         </div>
+        <SendConfirmation handleClose={this.resetUI}/>
       </div>
     );
   }
@@ -139,7 +166,11 @@ const mapStateToProps = state => {
     addressOrUsername: state.application.addressOrUsernameSend,
     amount: state.application.amountSend,
     balance: state.chains.balance,
-    wallet: state.application.wallet
+    wallet: state.application.wallet,
+    address: state.application.addressSend,
+    username: state.application.userNameToSend,
+    code: state.application.codeToSend,
+    isSendingEcc: state.application.sendingEcc
   };
 };
 
