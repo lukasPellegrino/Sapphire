@@ -9,6 +9,7 @@ import Input from '../Others/Input';
 var classNames = require('classnames');
 
 const Tools = require('../../utils/tools');
+import $ from 'jquery';
 
 class SendConfirmation extends React.Component {
  constructor() {
@@ -21,18 +22,43 @@ class SendConfirmation extends React.Component {
     this.reset = this.reset.bind(this);
     this.showMessage = this.showMessage.bind(this);
     this.animated = false;
+    this.state = {tickers: ["ECC", "USD", "EUR"], tickersOpen: false}
+    this.getAmountInTicker = this.getAmountInTicker.bind(this);
   }
 
   showWrongPassword(){
     Tools.showTemporaryMessage('#wrongPassword');
   }
 
-  componentWillMount(){
+  componentDidMount(){
+    $(window).on("click", (e) => {
+      if($(e.target).is('li')) {
+        return;
+      }
+      if(this.state.tickersOpen){
+        this.setState({tickersOpen: false})
+      }
+    })
   }
 
-  componentWillUnmount()
-  {
+  componentWillUnmount() {
+    $( window ).off('click');
+  }
 
+  getAmountInTicker(amount){
+    const selectedTicker = this.state.tickers[0];
+    let usdPrice = this.props.cmcStats.price.split(' ');
+    usdPrice = usdPrice[0].substring(1);
+
+    if(selectedTicker === "ECC"){
+      return Tools.formatNumber(amount);
+    }
+    else if(selectedTicker === "USD"){
+      return Tools.formatNumber(Number(Number(usdPrice * amount).toFixed(2)));
+    }
+    else if(selectedTicker === "EUR"){
+      return Tools.formatNumber(Number(Number(usdPrice * amount * 0.82).toFixed(2)));
+    }
   }
 
   sendECC(){
@@ -151,7 +177,7 @@ class SendConfirmation extends React.Component {
             })}
           </div>
           <div id="labels" style={{display: "none"}}>
-            <p className="labelAmountSend" style={{paddingTop: "0px"}}>{ this.props.lang.amount }: {Tools.formatNumber(Number(this.props.amount))} <span className="ecc">ECC</span></p>
+            <p className="labelAmountSend" style={{paddingTop: "0px"}}>{ this.props.lang.amount }: {Tools.formatNumber(Number(this.props.amount))} <span className="ecc">{this.state.tickers[0]}</span></p>
             <p className="labelSend">{ this.props.lang.name }: {this.props.username}<span className="Receive__ans-code">{this.props.codeToSend}</span> </p>
             <p className="labelAddressSend">({this.props.address})</p>
           </div>
@@ -161,7 +187,7 @@ class SendConfirmation extends React.Component {
     else if(this.props.username && this.props.username !== ""){
       return(
         <div>
-          <p className="labelAmountSend">{ this.props.lang.amount }: {Tools.formatNumber(Number(this.props.amount))} <span className="ecc">ECC</span></p>
+          <p className="labelAmountSend">{ this.props.lang.amount }: {Tools.formatNumber(Number(this.props.amount))} <span className="ecc">{this.state.tickers[0]}</span></p>
           <p className="labelSend">{ this.props.lang.name }: {this.props.username}<span className="Receive__ans-code">{this.props.codeToSend}</span> </p>
           <p className="labelAddressSend">({this.props.address})</p>
         </div>
@@ -169,27 +195,59 @@ class SendConfirmation extends React.Component {
     }else{
       return(
         <div>
-          <p className="labelAmountSend">{ this.props.lang.amount }: {Tools.formatNumber(Number(this.props.amount))} <span className="ecc">ECC</span></p>
+          <p className="labelAmountSend">{ this.props.lang.amount }: {Tools.formatNumber(Number(this.props.amount))} <span className="ecc">{this.state.tickers[0]}</span></p>
           <p className="labelSend">{ this.props.lang.address }: <span style={{fontSize:"14px"}}>{this.props.address}</span> </p>
         </div>
       )
     }
   }
 
+
+  handleTickerClicked(ticker){
+    if(!this.state.tickersOpen){
+      this.setState({tickersOpen: true})
+      return;
+    }
+
+    if(ticker == "ECC"){
+      this.setState({tickers: ["ECC", "USD", "EUR"], tickersOpen: false});
+    }
+    else if(ticker == "USD"){
+      this.setState({tickers: ["USD", "ECC", "EUR"], tickersOpen: false});
+    }
+    else if(ticker == "EUR"){
+      this.setState({tickers: ["EUR", "ECC", "USD"], tickersOpen: false});
+    }
+  }
+
   render() {
-    var sendConfirmation = classNames({
+    const sendConfirmation = classNames({
       'Send__confirmation': true,
       'Send__confirmation--is-compact': !this.props.isSendingEcc
+    });
+
+    const tickers = classNames({
+      'Send__confirmation-tickers': true,
+      'Send__confirmation-tickers--is-open': this.state.tickersOpen
     });
 
      return (
       <div className={sendConfirmation}>
         <CloseButtonPopup handleClose={this.props.handleClose}/>
         <div className="Send__confirmation-panel">
-          <p className="Send__confirmation-panel-header">Confirm Transaction</p>
+          <div className="Send__confirmation-panel-header">
+            <p>Confirm Transaction</p>
+            <ul className={tickers}>
+              {this.state.tickers.map((ticker) => {
+                return(
+                  <li onClick={this.handleTickerClicked.bind(this, ticker)}>{ticker}</li>
+                )
+              })}
+            </ul>
+          </div>
           <div className="Send__confirmation-panel-item" style={{marginTop: "10px"}}>
             <p className="Send__confirmation-panel-label">Amount</p>
-            <p className="Send__confirmation-panel-label-right">{Tools.formatNumber(Number(this.props.amount))} <span className="ecc">ECC</span></p>
+            <p className="Send__confirmation-panel-label-right">{this.getAmountInTicker(Number(this.props.amount))} <span className="ecc">{this.state.tickers[0]}</span></p>
           </div>
           <div className="Send__confirmation-panel-item">
             <p className="Send__confirmation-panel-label">Name</p>
@@ -199,12 +257,12 @@ class SendConfirmation extends React.Component {
           <p className="Send__confirmation-panel-label Send__confirmation-panel-address">{this.props.address}</p>
           <div className="Send__confirmation-panel-item">
             <p className="Send__confirmation-panel-label">Estimated fee</p>
-            <p className="Send__confirmation-panel-label-right">0.01 <span className="ecc">ECC</span></p>
+            <p className="Send__confirmation-panel-label-right">0.01 <span className="ecc">{this.state.tickers[0]}</span></p>
           </div>
           <div className="Send__confirmation-panel-confirm">
             <div className="Send__confirmation-panel-item">
               <p className="Send__confirmation-panel-label">Total</p>
-              <p className="Send__confirmation-panel-label-right">{Tools.formatNumber(Number(this.props.amount) + 0.01)} <span className="ecc">ECC</span></p>
+              <p className="Send__confirmation-panel-label-right">{this.getAmountInTicker(Number(this.props.amount) + 0.01)} <span className="ecc">{this.state.tickers[0]}</span></p>
             </div>
             <Input
               placeholder= { this.props.lang.password }
@@ -250,7 +308,8 @@ const mapStateToProps = state => {
     balance: state.chains.balance,
     codeToSend: state.application.codeToSend,
     multipleAddresses: state.application.ansAddressesFound,
-    isSendingEcc: state.application.sendingEcc
+    isSendingEcc: state.application.sendingEcc,
+    cmcStats: state.application.coinMarketCapStats,
   };
 };
 

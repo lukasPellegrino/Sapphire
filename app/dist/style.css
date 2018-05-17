@@ -17689,6 +17689,52 @@ aside {
       top: -4px;
       font-size: 24px;
       font-weight: 400; }
+  .Send__confirmation-tickers {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0px 0px;
+    padding: 0px 10px;
+    position: absolute;
+    right: 28px;
+    top: 14px;
+    height: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s; }
+    .Send__confirmation-tickers li {
+      list-style-type: none;
+      padding: 0px 5px;
+      margin-top: 5px;
+      font-size: 11px;
+      font-weight: bold;
+      transition: all 0.2s; }
+    .Send__confirmation-tickers--is-open {
+      transition: all 0.2s;
+      background-color: rgba(21, 21, 21, 0.9);
+      height: 70px;
+      box-shadow: 0px 0px 20px -4px black;
+      cursor: default; }
+      .Send__confirmation-tickers--is-open li {
+        transition: all 0.2s;
+        cursor: pointer; }
+        .theme-defaultEcc .Send__confirmation-tickers--is-open li:hover {
+          color: #d09128; }
+        .theme-darkEcc .Send__confirmation-tickers--is-open li:hover {
+          color: #c39c59; }
+      .Send__confirmation-tickers--is-open::after {
+        transform: rotate(315deg) !important;
+        top: 11px !important; }
+    .Send__confirmation-tickers::after {
+      content: "";
+      height: 7px;
+      width: 7px;
+      right: 1px;
+      top: 8px;
+      border: 1px solid #cecece;
+      border-width: 3px 3px 0 0;
+      transform: rotate(135deg);
+      position: absolute;
+      transition: all 0.3s; }
 
 .Send__confirmation-panel {
   width: 380px;
@@ -17697,11 +17743,31 @@ aside {
   position: relative;
   box-shadow: 0 4px 11px -6px black; }
   .Send__confirmation-panel-header {
-    font-size: 20px;
-    font-weight: 300;
-    text-align: center;
     padding: 10px 0px;
     border-bottom: 2px solid #1c1f25; }
+    .Send__confirmation-panel-header p {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 300;
+      width: 100%;
+      display: inline-block; }
+    .Send__confirmation-panel-header span {
+      font-size: 11px;
+      font-weight: bold;
+      position: absolute;
+      right: 34px;
+      top: 19px; }
+      .theme-defaultEcc .Send__confirmation-panel-header span {
+        color: #d09128; }
+      .theme-darkEcc .Send__confirmation-panel-header span {
+        color: #c39c59; }
+    .Send__confirmation-panel-header .arrowMenu {
+      border-width: 3px 3px 0 0;
+      height: 7px;
+      width: 7px;
+      right: 18px;
+      top: 22px;
+      cursor: pointer; }
   .Send__confirmation-panel-item {
     display: flex;
     flex-direction: row;
